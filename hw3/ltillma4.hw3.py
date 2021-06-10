@@ -1,4 +1,9 @@
 #!/usr/bin/env python3
+
+# Author: Logan Tillman
+# NetID: Ltillma4 
+# Hw3
+
 #######################################################
 # probs2_2.py
 # 
