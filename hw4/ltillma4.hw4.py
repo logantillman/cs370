@@ -70,4 +70,6 @@ for tolerance in tolerances:
 
 sol1 = conjGrad(Ax, x, b, 1.e-06)
 sol2 = conjGrad(Ax, x, b, 1.e-16)
+
+#FIXME Complete this last part
 print("\nError between vectors obtained with tol=1e-06 and tol=1e-16: ", sol1 - sol2,"\n")
