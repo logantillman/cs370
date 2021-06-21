@@ -1,17 +1,10 @@
 #!/usr/bin/env python3
-#
-# Template for Problem 10 from Problem Set 3.2
-#
-# Insert a comment block describing the problem and curve fitting
-# approach deployed.  Also, be sure your name and assignment
-# number are included in your comments.
-#
-# ???
-# ???
-# ???
-# ???
-# ???
-# ???
+
+# Author: Logan Tillman
+# NetID: Ltillma4
+# Hw6
+
+# I am using the least-squares fitting method to find the best fit curve/line
 
 from numpy import array,zeros
 from polyFit import *
@@ -43,7 +36,7 @@ for m in range(1,6):   # Try m=1,2,3,4,5 (degree of polynomial)
     if (stdev < minsdev) and proj < 100 and proj > 0 :
 
         print('{:3d}\t{:5.3f}\t{:5.3f}\t{:s}'.format(m,stdev,proj,'viable'))
-        # ys= ??? # get y-coordinates of polynomial using x-coordinates in xData array
+        ys= evalPoly(coeff, xData) # get y-coordinates of polynomial using x-coordinates in xData array
 #
 #       Use Matplotlib to plot original data points with validated curve fitting
 #
@@ -53,10 +46,10 @@ for m in range(1,6):   # Try m=1,2,3,4,5 (degree of polynomial)
         my_title= 'Fit with poly degree = ' + str(m) + '; green dot is 2000 projection'
         pylab.title(my_title)
         pylab.xlim(left=1710, right=2015)            # x-axis values should range from 1710 to 2015
-        # pylab.plot(???)            # plot Year 2000 projection as a green dot
-        pylab.plot(xData, yData, color='red', linestyle='point')            # plot the original data given in the xData and yData
+        pylab.plot(2000, proj, color='green', marker='.')            # plot Year 2000 projection as a green dot
+        pylab.plot(xData, yData, color='red', marker='.', linestyle='')            # plot the original data given in the xData and yData
                                    # arrays as red dots
-        # pylab.plot(???)            # plot polynomial curve using xData and ys arrays
+        pylab.plot(xData, ys, color='blue')            # plot polynomial curve using xData and ys arrays
                                    # and make it blue.
         pylab.grid()
         fname='degree' + str(m) + 'fit.png' # save figure to file rather than display
