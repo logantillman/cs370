@@ -48,16 +48,16 @@ import matplotlib.pyplot as plt
 #
 def F(x):
     F = zeros((len(x)), dtype=float64)
-    F[0] = ???
-    F[1] = ???
-    F[2] = ???
+    F[0] = 6870 - x[0]/(1+x[1]*sin(-pi/6 + x[2]))
+    F[1] = 6728 - x[0]/(1+x[1]*sin(0 + x[2]))
+    F[2] = 6615 - x[0]/(1+x[1]*sin(pi/6 + x[2]))
     return F
 
 # Initial guess
-x = np.array(???)  # What list needs to be used to initialze the Newton-Raphson (N-R) method?
+x = np.array([6800, 0.5, 0])  # What list needs to be used to initialze the Newton-Raphson (N-R) method?
 
 # Complete the call to the N-R method to solve for unknowns
-x = newtonRaphson2(??)
+x = newtonRaphson2(F, x)
 
 # Print the solution vector x from N-R
 print()
@@ -65,8 +65,8 @@ np.set_printoptions(precision = 3)
 print('[ C  e  alpha] = ' + np.array_str(x))
 
 # Calculate minimum trajectory and angle using components of x
-minTheta = ???
-minR = ???
+minTheta = (pi/2.0 - x[2]) * 180.0 / pi
+minR = x[0] / (1 + x[1])
 
 # Print minimum trajectory results
 print('Minimum trajectory = %.3f km' % minR)
