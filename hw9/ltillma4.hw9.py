@@ -1,14 +1,12 @@
 #!/usr/bin/env python3
-#
-# Template script for Problem 14 from Problemt Set 6.1 (p. 214 of textbook)
-#  
-# I this comment block, briefly explain the procedure referred to as
-# Romberg Integration and provide your name and assignment number.
-#  
-# ??? 
-# ??? 
-# ??? 
-#  
+
+# Author: Logan Tillman
+# NetID: Ltillma4
+# Hw9
+
+# The Romberg Integration is a combination of the Trapezoidal Rule
+# and Richardson extrapolation to improve the estimates of integral approximation
+
 from romberg import *
 from numpy import *
 import matplotlib.pyplot as plt
